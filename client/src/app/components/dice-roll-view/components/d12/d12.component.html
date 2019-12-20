@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="die" #d20 (click)="dice.rollToRandom($event)" [ngClass]="{'rolling': dice.isRolling}"
+        [attr.data-face]="dice.dataFace">
+        <div class="side-container">
+            <div class="side1">
+                <div class="face num4">
+                    <figure></figure><span>4</span>
+                </div>
+                <div class="face num1">
+                    <figure></figure><span>1</span>
+                </div>
+                <div class="face num6">
+                    <figure></figure><span>6</span>
+                </div>
+                <div class="face num3">
+                    <figure></figure><span>3</span>
+                </div>
+                <div class="face num8">
+                    <figure></figure><span>8</span>
+                </div>
+                <div class="face num2">
+                    <figure></figure><span>2</span>
+                </div>
+            </div>
+            <div class="side2">
+                <div class="face num9">
+                    <figure></figure><span>9</span>
+                </div>
+                <div class="face num12">
+                    <figure></figure><span>12</span>
+                </div>
+                <div class="face num11">
+                    <figure></figure><span>11</span>
+                </div>
+                <div class="face num5">
+                    <figure></figure><span>5</span>
+                </div>
+                <div class="face num10">
+                    <figure></figure><span>10</span>
+                </div>
+                <div class="face num7">
+                    <figure></figure><span>7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

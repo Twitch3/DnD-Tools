@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="die" #d6 (click)="dice.rollToRandom($event)"
+     [ngClass]="{'rolling': dice.isRolling}" [attr.data-face]="dice.dataFace">
+        <figure class="face face-1">
+            <span class="top">1</span>
+            <span class="left">4</span>
+            <span class="right">3</span>
+        </figure>
+        <figure class="face face-2">
+            <span class="top">1</span>
+            <span class="left">2</span>
+            <span class="right">4</span>
+        </figure>
+        <figure class="face face-3">
+            <span class="top">1</span>
+            <span class="left">3</span>
+            <span class="right">2</span>
+        </figure>
+        <figure class="face face-4">
+            <span class="top">2</span>
+            <span class="left">3</span>
+            <span class="right">4</span>
+        </figure>
+    </div>
+</div>

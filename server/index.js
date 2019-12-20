@@ -1,11 +1,12 @@
-let express = require('express')
-let app = express();
+const express = require('express');
+const app = express();
 
-let http = require('http');
-let server = http.Server(app);
+const http = require('http');
+const server = http.Server(app);
+const fs = require('fs');
 
-let socketIO = require('socket.io');
-let io = socketIO(server);
+const socketIO = require('socket.io');
+const io = socketIO(server);
 
 const port = process.env.PORT || 3000;
 

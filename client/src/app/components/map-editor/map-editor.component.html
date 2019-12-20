@@ -1,0 +1,2 @@
+<app-map-view [editorMode]="true" (cellSelected)="editCell($event)"></app-map-view>
+<app-cell-editor-modal *ngIf="selectedCell" [cell]="selectedCell" (closeModal)="modalClosed()"></app-cell-editor-modal>

@@ -1,0 +1,11 @@
+<div class="content">
+    <div class="die" #d6 (click)="dice.rollToRandom($event)"
+     [ngClass]="{'rolling': dice.isRolling}" [attr.data-face]="dice.dataFace">
+        <figure class="face face-1"></figure>
+        <figure class="face face-2"></figure>
+        <figure class="face face-3"></figure>
+        <figure class="face face-4"></figure>
+        <figure class="face face-5"></figure>
+        <figure class="face face-6"></figure>
+    </div>
+</div>

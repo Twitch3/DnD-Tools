@@ -1,0 +1,131 @@
+$containerWidth: 200px;
+$containerHeight: $containerWidth * 0.866;
+
+$faceWidth: $containerWidth;
+$faceHeight: $faceWidth * 0.866;
+
+$transitionDuration: 0.5s;
+$animationDuration: 1s;
+
+$angle: 19.5deg;
+$sideAngle: 360deg/3;
+$opacity: 0.75;
+$color: rgba(30, 180, 20, $opacity);
+
+$rotateX: -$angle;
+$translateZ: $faceHeight * 0.165;
+$translateY: (-$faceHeight * 0.15) + 25;
+$translateRingZ: $faceWidth * 0.75;
+$translateRingY: $faceHeight * 0.78 + $translateY;
+$translateLowerZ: $translateZ;
+$translateLowerY: $faceHeight * 0.78 + $translateRingY;
+
+@keyframes roll {
+  10% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  30% {
+    transform: rotateX(120deg) rotateY(240deg) rotateZ(0deg);
+  }
+  50% {
+    transform: rotateX(240deg) rotateY(480deg) rotateZ(0deg);
+  }
+  70% {
+    transform: rotateX(360deg) rotateY(720deg) rotateZ(0deg);
+  }
+  90% {
+    transform: rotateX(480deg) rotateY(960deg) rotateZ(0deg);
+  }
+}
+
+.content {
+  margin: auto auto;
+  position: relative;
+  width: $containerWidth;
+  height: $containerHeight;
+  perspective: 1500px;
+}
+
+.die {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform $transitionDuration ease-out;
+  cursor: pointer;
+  user-select: none;
+  transform-origin: ($faceWidth/2) ($faceHeight/2 + 35);
+  transform: rotateX(-19.5deg);
+
+  &.rolling {
+    animation: roll $animationDuration linear;
+  }
+
+  &[data-face="1"] {
+    transform: rotateX(-19.5deg);
+  }
+
+  &[data-face="2"] {
+    transform: rotateY(-60deg) rotateX(-110deg);
+  }
+
+  &[data-face="3"] {
+    transform: rotateY(-45deg) rotateX(-213deg) rotateZ(60deg);
+  }
+
+  &[data-face="4"] {
+    transform: rotateY(56deg) rotateX(-224deg) rotateZ(-45deg);
+  }
+
+  .face {
+    $horizontalMargin: -$faceWidth * 0.5;
+
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin: 0 $horizontalMargin;
+    border-left: $faceWidth * 0.5 solid transparent;
+    border-right: $faceWidth * 0.5 solid transparent;
+    border-bottom: $faceHeight solid $color;
+    width: 0px;
+    height: 0px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    counter-increment: steps 1;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        $angleMultiplier: $i - 1;
+        transform: rotateY(-$sideAngle * $angleMultiplier)
+          translateZ($translateZ)
+          translateY($translateY)
+          rotateX($angle);
+      }
+    }
+
+    @for $i from 4 through 4 {
+      &:nth-child(#{$i}) {
+        $angleMultiplier: $i - 4;
+        transform: rotateY(180deg) translateZ($translateZ) translateY(($translateZ * 2) + 23) rotateX(-90deg);
+      }
+    }
+
+    span {
+      position: absolute;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+      font-size: 48px;
+      &.top {
+        transform: translateX(-12px) translateY(5px);
+      }
+
+      &.left {
+        transform: translateX(-80px) translateY($faceHeight - 45) rotateZ(-120deg);
+      }
+      &.right {
+        transform: translateX(55px) translateY($faceHeight - 45) rotateZ(120deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="map-controls top">
+    <button class="map-control">Widen Map</button>
+    <button class="map-control">Save Map</button>
+</div>
+<div class="map">
+    <div class="scale-container" #scale>
+        <app-map-grid #mapGridElem [rotateCoords]="rotateCoords" [mapFloor]="currentMapFloor"
+            (cellSelected)="handleCellSelected($event)"></app-map-grid>
+    </div>
+</div>
+<div class="map-controls bottom">
+    <div class="floor-buttons" *ngIf="dungeon">
+        <button  *ngFor="let item of [].constructor(dungeon.dungeonFloors.length); let i = index" class="floor-button map-control"
+            (click)="changeFloorView(i)">
+            {{i + 1}}
+        </button >
+    </div>
+    <input #fileInput (change)="handleLoadedMapJSON($event)" type="file" name="file-input" style="display: none;" />
+    <button class="map-control" (click)="loadMapJSON()">Load Map</button>
+    <button class="map-control" (click)="saveMapJSON()">Save Map</button>
+    <button class="map-control reset-map" (click)="resetMapView()">Reset Map View</button>
+</div>
