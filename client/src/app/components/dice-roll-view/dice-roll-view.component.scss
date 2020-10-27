@@ -1,5 +1,12 @@
 .dice-container {
     height: 200px;
     width: 200px;
-    float: left;
+}
+
+.dice-selction {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    transform-origin: top;
+    transform: scale(0.4);
 }

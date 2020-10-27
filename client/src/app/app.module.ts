@@ -21,13 +21,10 @@ import { D4Component } from './components/dice-roll-view/components/d4/d4.compon
 import { D3Component } from './components/dice-roll-view/components/d3/d3.component';
 import { D2Component } from './components/dice-roll-view/components/d2/d2.component';
 import { DragToRotateDirective } from './directives/drag-to-rotate.directive';
-import { MapGridComponent } from './components/map-view/components/map-grid/map-grid.component';
-import { MapCellComponent } from './components/map-view/components/map-cell/map-cell.component';
-import { MapCubeComponent } from './components/map-view/components/map-cube/map-cube.component';
-import { MapEditorComponent } from './components/map-editor/map-editor.component';
-import { CellEditorModalComponent } from './components/map-editor/components/cell-editor-modal/cell-editor-modal.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
+import { JoinServerComponent } from './components/join-server/join-server.component';
+import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-menu.component';
 
 @NgModule({
   declarations: [
@@ -47,11 +44,8 @@ import { reducers, metaReducers } from './reducers';
     D3Component,
     D2Component,
     DragToRotateDirective,
-    MapGridComponent,
-    MapCellComponent,
-    MapCubeComponent,
-    MapEditorComponent,
-    CellEditorModalComponent
+    JoinServerComponent,
+    HamburgerMenuComponent
   ],
   imports: [
     BrowserModule,

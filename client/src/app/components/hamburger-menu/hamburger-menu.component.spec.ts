@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CellEditorModalComponent } from './cell-editor-modal.component';
+import { HamburgerMenuComponent } from './hamburger-menu.component';
 
-describe('CellEditorModalComponent', () => {
-  let component: CellEditorModalComponent;
-  let fixture: ComponentFixture<CellEditorModalComponent>;
+describe('HamburgerMenuComponent', () => {
+  let component: HamburgerMenuComponent;
+  let fixture: ComponentFixture<HamburgerMenuComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CellEditorModalComponent ]
+      declarations: [ HamburgerMenuComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CellEditorModalComponent);
+    fixture = TestBed.createComponent(HamburgerMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

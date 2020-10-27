@@ -1,9 +1,0 @@
-<div class="grid-container">
-    <div class="grid" #grid>
-        <div class="row" *ngFor="let row of map; let x = index">
-            <div class="cell" *ngFor="let cell of row; let y = index" (click)="cellClick(cell)" (auxclick)="auxClick($event, cell)">
-                <app-map-cell [mapCell]="cell"></app-map-cell>
-            </div>
-        </div>
-    </div>
-</div>

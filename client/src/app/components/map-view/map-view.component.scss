@@ -3,55 +3,12 @@
   height: 100%;
   width: 100%;
 }
-.map {
-  position: fixed;
-  display: block;
+
+#map-control-container {
   height: 100%;
   width: 100%;
-  margin: 0 auto;
   overflow: hidden;
-  user-select: none;
-
-  .scale-container {
-    height: 100%;
-    width: 100%;
-    transform-style: preserve-3d;
-    will-change: transform;
-
-    app-map-grid {
-      display: block;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      will-change: transform;
-    }
-  }
-}
-
-.map-controls {
-  position: absolute;
-  right: 15px;
-  &.top {
-    top: 40px;
-  }
-  &.bottom {
-    bottom: 20px;
-    .floor-buttons {
-      float: left;
-      .floor-button {
-        float: left;
-        display: block;
-      }
-    }
-    .reset-map {
-      float: right;
-    }
-  }
-  button {
-    border: none;
-    background: rgba(50, 60, 50, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    margin-right: 5px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

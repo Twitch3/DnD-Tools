@@ -5,14 +5,14 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { DiceRollViewComponent } from './components/dice-roll-view/dice-roll-view.component';
 import { ChatViewComponent } from './components/chat-view/chat-view.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
-import { MapEditorComponent } from './components/map-editor/map-editor.component';
+import { JoinServerComponent } from './components/join-server/join-server.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'chat', component: ChatViewComponent },
   { path: 'dice', component: DiceRollViewComponent },
   { path: 'map', component: MapViewComponent },
-  { path: 'edit', component: MapEditorComponent }
+  { path: 'join', component: JoinServerComponent}
 ];
 
 @NgModule({

@@ -1,3 +1,5 @@
-<div id="socket-error-bar" *ngIf="hasSocketError">
+<div id="status-indicator" [ngClass]="statusClass">{{connectedText}}</div>
+<div id="socket-error-bar" *ngIf="hasSocketError && !dismissBar">
     <button (click)="retrySocketConnection()">Retry Socket Connection</button>
+    <button (click)="dismissErrorBar()">Dismiss</button>
 </div>

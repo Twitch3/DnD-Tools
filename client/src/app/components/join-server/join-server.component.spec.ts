@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MapGridComponent } from './map-grid.component';
+import { JoinServerComponent } from './join-server.component';
 
-describe('MapGridComponent', () => {
-  let component: MapGridComponent;
-  let fixture: ComponentFixture<MapGridComponent>;
+describe('JoinServerComponent', () => {
+  let component: JoinServerComponent;
+  let fixture: ComponentFixture<JoinServerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MapGridComponent ]
+      declarations: [ JoinServerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MapGridComponent);
+    fixture = TestBed.createComponent(JoinServerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
