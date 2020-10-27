@@ -1,7 +1,9 @@
 import * as io from 'socket.io-client';
 import { Observable, BehaviorSubject, ReplaySubject } from 'rxjs';
+import { Injectable } from "@angular/core";
 
 // TODO: Eventually this Service will serve as our base connection to the SocketIO- not just for chat
+@Injectable()
 export class SocketService {
     private url = 'http://192.168.1.8:3000';
     private socket;
