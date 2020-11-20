@@ -1,0 +1,35 @@
+<div class="modal-base" *ngIf="modalOpen">
+    <div class="modal-container">
+        <span class="close" (click)="modalOpen = false">X</span>
+        <div class="modal" [formGroup]="tokenForm">
+            <h2>{{originalToken.name}}</h2>
+            <form [formGroup]="tokenForm">
+                <div class="modal-row">
+                    <span>Name</span> <input type="text" formControlName="name">
+                </div>
+                <div class="modal-row">
+                    <span>Abbreviation</span> <input type="text" formControlName="abbreviatedName">
+                </div>
+                <div class="modal-row">
+                    <span>Faction</span> <select name="character-type" formControlName="faction">
+                        <option *ngFor="let faction of factionValues" value="{{faction.value}}">{{faction.key}}</option>
+                    </select>
+                </div>
+                <div class="modal-row">
+                    <span>Color</span>
+                    <button (click)="openColorPicker()">COLOR PICK HERE LOL</button>
+                    <!-- <color-photoshop (onChangeComplete)="tempColor = $event.color.hex" (onAccept)="closeColorPicker()" (onCancel)="closeColorPicker()"></color-photoshop> -->
+                </div>
+                <!-- TODO: Will we ever want to change the TYPE of a token? -->
+                <!-- <div class="modal-row">
+                    <span>Type</span> <select name="character-type" formControlName="type">
+                        <option *ngFor="let type of typeValues" value="{{type.value}}">{{type.key}}</option>
+                    </select>
+                </div> -->
+                <div class="modal-row">
+                    <button type="button" (click)="updateToken()">Save Updates</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

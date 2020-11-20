@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="die" #d20 (click)="dice.rollToRandom($event)" [ngClass]="{'rolling': dice.isRolling}"
+    <div class="die" #d20 (click)="dice.rollToRandom()" [ngClass]="{'rolling': dice.isRolling}"
         [attr.data-face]="dice.dataFace">
         <div class="side-container">
             <div class="side1">

@@ -1,0 +1,6 @@
+<div class="modal-base" *ngIf="modalOpen">
+    <div class="modal-container">
+        <span class="close" (click)="modalOpen = false">X</span>
+        <app-token-modal #tokenModal *ngIf="modalType === 'token'" (tokenFormSubmit)="tokenFormSubmitted($event)"></app-token-modal>
+    </div>
+</div>

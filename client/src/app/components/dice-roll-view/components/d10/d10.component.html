@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="die" #d20 (click)="dice.rollToRandom($event)"
+    <div class="die" #d20 (click)="dice.rollToRandom()"
      [ngClass]="{'rolling': dice.isRolling, 'two-digits': tensPlace}" [attr.data-face]="dice.dataFace">
         <figure class="face face-0"></figure>
         <figure class="face face-1"></figure>

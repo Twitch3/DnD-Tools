@@ -1,0 +1,24 @@
+<div class="modal" [formGroup]="tokenForm">
+    <h2>Add Token</h2>
+    <form [formGroup]="tokenForm">
+        <div class="modal-row">
+            <span>Name</span> <input type="text" formControlName="name">
+        </div>
+        <div class="modal-row">
+            <span>Amount</span> <input type="number" formControlName="amount">
+        </div>
+        <div class="modal-row">
+            <span>Faction</span> <select name="character-type" formControlName="faction">
+                <option *ngFor="let faction of factionValues" value="faction.value">{{faction.key}}</option>
+            </select>
+        </div>
+        <div class="modal-row">
+            <span>Type</span> <select name="character-type" formControlName="type">
+                <option *ngFor="let type of typeValues" value="type.value">{{type.key}}</option>
+            </select>
+        </div>
+        <div class="modal-row">
+            <button type="button" (click)="submitTokenForm()">Add Tokens</button>
+        </div>
+    </form>
+</div>

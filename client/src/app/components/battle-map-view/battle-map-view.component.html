@@ -1,0 +1,20 @@
+<app-battle-map [tokens]="tokens" [url]="url" [cellSize]="cellSize" (tokenClick)="tokenClicked($event)"></app-battle-map>
+<div id="map-controls">
+    <button (click)="playMusic()">►</button>
+    <div class="volume-slider">
+        <ng5-slider [(value)]="volume" [options]="volumeOptions" (valueChange)="updateMasterVolume()"></ng5-slider>
+    </div>
+    <button (click)="saveMapState()">Save</button>
+    <button (click)="loadMapState()">Load</button>
+    <button (click)="loadMapImage()">Load Image</button>
+    <input type="checkbox" class="grid-check" *ngIf="url"><span *ngIf="url">Grid</span>
+    <button (click)="openTokenModal()">Add Token</button>
+    <button (click)="changeTokenSizeTo(cellSize + 1)">+</button>
+    <button (click)="changeTokenSizeTo(cellSize - 1)">-</button>
+    <input type="number" class="token-size-input" min="30" [(ngModel)]="cellSize">
+</div>
+<!-- TODO: separate add token modal from base (base need only be styles) -->
+<app-modal-base #tokenModal (modalSubmit)="handleTokenModal($event)" [modalType]="'token'"></app-modal-base>
+<app-edit-token-modal #editTokenModal></app-edit-token-modal>
+<input type="file" #imageInput (change)="imageFileSelected($event)" hidden>
+<input type="file" #fileInput (change)="handleLoadedMapJSON($event)" hidden>

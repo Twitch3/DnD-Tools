@@ -33,12 +33,12 @@ export class DragToRotateDirective {
       this.offsetX = $event.clientX - this.mouseX;
       this.offsetY = $event.clientY - this.mouseY;
       this.isClick = false;
-      this.domElem.style['transform'] = 'rotateY('  + this.offsetX + 'deg) rotateX(' + (-this.offsetY) + 'deg)';
+      this.domElem.style['transform'] = 'rotateY(' + this.offsetX + 'deg) rotateX(' + (-this.offsetY) + 'deg)';
     }
   }
 
   @HostListener('window:mouseup', ['$event']) onMouseUp($event) {
-    
+
   }
 
   constructor(elementRef: ElementRef) {

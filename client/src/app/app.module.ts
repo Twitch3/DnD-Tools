@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ColorPhotoshopModule  } from 'ngx-color/photoshop';
 
 import { AppComponent } from './app.component';
 import { SocketService } from '../socket.service';
@@ -9,8 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { SocketErrorBarComponent } from './components/socket-error-bar/socket-error-bar.component';
 import { DiceRollViewComponent } from './components/dice-roll-view/dice-roll-view.component';
-import { ChatViewComponent } from './components/chat-view/chat-view.component';
-import { MapViewComponent } from './components/map-view/map-view.component';
 import { D20Component } from './components/dice-roll-view/components/d20/d20.component';
 import { D12Component } from './components/dice-roll-view/components/d12/d12.component';
 import { D10Component } from './components/dice-roll-view/components/d10/d10.component';
@@ -24,7 +23,17 @@ import { DragToRotateDirective } from './directives/drag-to-rotate.directive';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { JoinServerComponent } from './components/join-server/join-server.component';
-import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-menu.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DragToMoveDirective } from './directives/drag-to-move.directive';
+import { BattleMapViewComponent } from './components/battle-map-view/battle-map-view.component';
+import { BattleMapComponent } from './components/battle-map-view/components/battle-map/battle-map.component';
+import { TokenContainerComponent } from './components/battle-map-view/components/token-container/token-container.component';
+import { TokenModalComponent } from './components/battle-map-view/components/modals/token-modal/token-modal.component';
+import { ModalBaseComponent } from './components/battle-map-view/components/modals/modal-base/modal-base.component';
+import { EditTokenModalComponent } from './components/battle-map-view/components/modals/edit-token-modal/edit-token-modal.component';
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
   declarations: [
@@ -32,8 +41,6 @@ import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-me
     LandingPageComponent,
     SocketErrorBarComponent,
     DiceRollViewComponent,
-    ChatViewComponent,
-    MapViewComponent,
     D20Component,
     D12Component,
     D10Component,
@@ -45,13 +52,25 @@ import { HamburgerMenuComponent } from './components/hamburger-menu/hamburger-me
     D2Component,
     DragToRotateDirective,
     JoinServerComponent,
-    HamburgerMenuComponent
+    DragToMoveDirective,
+    BattleMapViewComponent,
+    BattleMapComponent,
+    TokenContainerComponent,
+    TokenModalComponent,
+    ModalBaseComponent,
+    EditTokenModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule,
+    CommonModule,
+    DragDropModule,
+    ReactiveFormsModule,
+    ColorPhotoshopModule,
+    Ng5SliderModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

@@ -1,0 +1,7 @@
+<div id="token-container" [ngStyle]="{'max-width': cellSize * 5 + 'px'}">
+    <div class="map-token" *ngFor="let token of tokens"
+        [ngStyle]="{width: cellSize + 'px', height: cellSize + 'px', 'line-height': cellSize + 'px', 'background-color': token.tokenColor}"
+        appDragToMove [(coordinates)]="token.tokenCoords" [scale]="scale" (dragged)="tokenDragged(token)" (click)="tokenClicked(token)">
+        {{token.abbreviatedName}}
+    </div>
+</div>
